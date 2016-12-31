@@ -4,16 +4,16 @@ RSpec.describe "themes/index", type: :view do
   before(:each) do
     assign(:themes, [
       Theme.create!(
-        :title => "Title"
+        :title => "Title1"
       ),
       Theme.create!(
-        :title => "Title"
+        :title => "Title2"
       )
     ])
   end
 
   it "renders a list of themes" do
     render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
+    assert_select "tr>td", :text => /Title.*/, :count => 2
   end
 end

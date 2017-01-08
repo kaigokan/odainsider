@@ -12,6 +12,14 @@ RSpec.describe ThemesController, type: :controller do
 
   let(:valid_session) { {} }
 
+  describe "GET #sample" do
+    it "assigns the requested theme as @theme" do
+      theme = Theme.create! valid_attributes
+      get :sample, session: valid_session
+      expect(assigns(:theme)).to be_an_instance_of(Theme)
+    end
+  end
+
   describe "GET #index" do
     it "assigns all themes as @themes" do
       theme = Theme.create! valid_attributes

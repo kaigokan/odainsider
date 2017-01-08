@@ -3,6 +3,7 @@ class ThemesController < ApplicationController
 
   # GET /themes/sample
   def sample
+    @theme = Theme.sample
   end
 
   # GET /themes

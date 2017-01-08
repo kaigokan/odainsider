@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe ThemesController, type: :controller do
 
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { :title => "Sample01" }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { :title => nil }
   }
 
   let(:valid_session) { {} }
@@ -79,14 +79,14 @@ RSpec.describe ThemesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { :title => "Sample02" }
       }
 
       it "updates the requested theme" do
         theme = Theme.create! valid_attributes
         put :update, params: {id: theme.to_param, theme: new_attributes}, session: valid_session
         theme.reload
-        skip("Add assertions for updated state")
+        expect(theme.title).to eq("Sample02")
       end
 
       it "assigns the requested theme as @theme" do

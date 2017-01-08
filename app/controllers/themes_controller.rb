@@ -1,8 +1,8 @@
 class ThemesController < ApplicationController
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
-  # GET /themes/pick
-  def pick
+  # GET /themes/sample
+  def sample
   end
 
   # GET /themes

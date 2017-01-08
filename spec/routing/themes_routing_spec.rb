@@ -3,6 +3,10 @@ require "rails_helper"
 RSpec.describe ThemesController, type: :routing do
   describe "routing" do
 
+    it "root" do
+      expect(:get => "/").to route_to("themes#sample")
+    end
+
     it "routes to #sample" do
       expect(:get => "/themes/sample").to route_to("themes#sample")
     end
